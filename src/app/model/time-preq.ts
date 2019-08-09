@@ -5,5 +5,5 @@ export class TimePreq {
     diff: string;
     laps: number;
     country: string;
-    car_icon: ImageBitmapSource;
+    car_icon: any;
 }
