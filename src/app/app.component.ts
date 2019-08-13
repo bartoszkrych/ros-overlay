@@ -27,8 +27,10 @@ export class AppComponent implements OnInit  {
 
   numbersToList() {
     const items: number[] = [];
-    for (let i = 0; i <= this.times.length + this.DRIVERS_ON_PAGE; i += this.DRIVERS_ON_PAGE) {
-       items.push(i);
+    if (this.times) {
+      for (let i = 0; i <= this.times.length + this.DRIVERS_ON_PAGE; i += this.DRIVERS_ON_PAGE) {
+        items.push(i);
+      }
     }
     return items;
   }
