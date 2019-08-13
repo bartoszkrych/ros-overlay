@@ -13,7 +13,7 @@ export class TimePreqService {
   }
 
   getAllTimesPreq(): Observable<TimePreq[]> {
-    return this.http.get<TimePreq[]>(`${this.baseUrl}/en/timetable/preq-overlay/371?fbclid=IwAR1XlzitRCGxFlRgYkjftNcO6Y_JvlvLlVu5s6FHylSKKQcmrkxS5baOX64&server=platinum`);
+    return this.http.get<TimePreq[]>(`${this.baseUrl}/timetable/preq-overlay/371?server=platinum`);
   }
 
 }
