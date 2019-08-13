@@ -4,8 +4,8 @@
             <ngb-carousel>
                     <!-- https://ng-bootstrap.github.io/#/components/carousel/api -->
                 <ng-template ngbSlide  
-                            *ngFor="let number of createRange(timesSize); let i = index ">
-                    <div *ngFor="let number2 of createRange2(4); let j = index ">
+                            *ngFor="let number of numbersToList(); let i = index ">
+                    <div *ngFor="let number2 of createRange(4); let j = index ">
                         <div *ngIf="times[number+j]" class="card bg-light" >
                         <td>{{times[number+j].position}}</td>
                         <td>{{times[number+j].name}}</td>

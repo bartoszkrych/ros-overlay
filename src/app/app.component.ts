@@ -10,7 +10,6 @@ import { TimePreqService } from './service/time-preq/time-preq.service';
 export class AppComponent implements OnInit  {
 
   times : TimePreq[];
-  timesSize: number;
   
   constructor(private timePreqService: TimePreqService){}
 
@@ -21,13 +20,12 @@ export class AppComponent implements OnInit  {
   reloadData(){
     this.timePreqService.getAllTimesPreq().subscribe(data => {
       this.times = data;
-      this.timesSize = data.length;
     });
   }
 
-  createRange(number){
+  numbersToList(){
     var items: number[] = [];
-    for(var i = 0; i <= number; i++){
+    for(var i = 0; i <= this.times.length; i++){
 
        items.push(i);
        i=i+3;
@@ -35,7 +33,7 @@ export class AppComponent implements OnInit  {
     return items;
   }
 
-  createRange2(number){
+  createRange(number){
     var items: number[] = [];
     for(var i = 1; i <= number; i++){
 
