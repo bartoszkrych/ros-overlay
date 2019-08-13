@@ -6,10 +6,10 @@ import { TimePreq } from '../../model/time-preq';
 @Injectable()
 export class TimePreqService {
 
-  private baseUrl :string;
-  
+  private baseUrl: string;
+
   constructor(private http: HttpClient) {
-    this.baseUrl = 'https://republicofsimracers.com'
+    this.baseUrl = 'https://republicofsimracers.com';
   }
 
   getAllTimesPreq(): Observable<TimePreq[]> {

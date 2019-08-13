@@ -9,34 +9,33 @@ import { TimePreqService } from './service/time-preq/time-preq.service';
 })
 export class AppComponent implements OnInit  {
 
-  times : TimePreq[];
-  DRIVERS_ON_PAGE : number;
-  
-  constructor(private timePreqService: TimePreqService){
+  times: TimePreq[];
+  DRIVERS_ON_PAGE: number;
+
+  constructor(private timePreqService: TimePreqService) {
     this.DRIVERS_ON_PAGE = 4;
   }
 
   ngOnInit(): void {
-    this.reloadData()
+    this.reloadData();
   }
 
-  reloadData(){
-    this.timePreqService.getAllTimesPreq().subscribe(data => {
-      this.times = data;
+  reloadData() {
+    this.timePreqService.getAllTimesPreq().subscribe(data => {this.times = data;
     });
   }
 
-  numbersToList(){
-    var items: number[] = [];
-    for(var i = 0; i <= this.times.length+this.DRIVERS_ON_PAGE; i+=this.DRIVERS_ON_PAGE){
+  numbersToList() {
+    const items: number[] = [];
+    for (let i = 0; i <= this.times.length + this.DRIVERS_ON_PAGE; i += this.DRIVERS_ON_PAGE) {
        items.push(i);
     }
     return items;
   }
 
-  driverOnPage(){
-    var items: number[] = [];
-    for(var i = 1; i <= this.DRIVERS_ON_PAGE; i++){
+  driverOnPage() {
+    const items: number[] = [];
+    for (let i = 1; i <= this.DRIVERS_ON_PAGE; i++) {
        items.push(i);
     }
     return items;

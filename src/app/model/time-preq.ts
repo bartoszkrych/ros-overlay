@@ -1,5 +1,5 @@
 export class TimePreq {
-    position : number;
+    position: number;
     name: string;
     laptime: string;
     diff: string;
