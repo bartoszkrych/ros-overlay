@@ -1,19 +1,18 @@
 <div class="card bg-dark my-5">
   <div class="card-body">
       <div class="card-body table-responsive">
-            <ngb-carousel>
+            <ngb-carousel [wrap] = false [showNavigationArrows] = false [showNavigationIndicators] = false>
                     <!-- https://ng-bootstrap.github.io/#/components/carousel/api -->
-                <ng-template ngbSlide  
-                            *ngFor="let number of numbersToList(); let i = index ">
-                    <div *ngFor="let number2 of createRange(4); let j = index ">
-                        <div *ngIf="times[number+j]" class="card bg-light" >
-                        <td>{{times[number+j].position}}</td>
-                        <td>{{times[number+j].name}}</td>
-                        <td>{{times[number+j].laptime}}</td>
-                        <td>{{times[number+j].diff}}</td>
-                        <td>{{times[number+j].laps}}</td>
-                        <td>{{times[number+j].country}}</td>
-                        <td><img src="{{times[number+j].car_icon}}" height="30"/></td>
+                <ng-template ngbSlide  *ngFor="let number of numbersToList()">
+                    <div *ngFor="let number2 of driverOnPage(); let i = index ">
+                        <div *ngIf="times[number+i]" class="card bg-light" >
+                        <td>{{times[number+i].position}}</td>
+                        <td>{{times[number+i].name}}</td>
+                        <td>{{times[number+i].laptime}}</td>
+                        <td>{{times[number+i].diff}}</td>
+                        <td>{{times[number+i].laps}}</td>
+                        <td>{{times[number+i].country}}</td>
+                        <td><img src="{{times[number+i].car_icon}}" height="30"/></td>
                         </div>
                     </div>
                 </ng-template>

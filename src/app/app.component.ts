@@ -10,8 +10,11 @@ import { TimePreqService } from './service/time-preq/time-preq.service';
 export class AppComponent implements OnInit  {
 
   times : TimePreq[];
+  DRIVERS_ON_PAGE : number;
   
-  constructor(private timePreqService: TimePreqService){}
+  constructor(private timePreqService: TimePreqService){
+    this.DRIVERS_ON_PAGE = 4;
+  }
 
   ngOnInit(): void {
     this.reloadData()
@@ -25,18 +28,15 @@ export class AppComponent implements OnInit  {
 
   numbersToList(){
     var items: number[] = [];
-    for(var i = 0; i <= this.times.length; i++){
-
+    for(var i = 0; i <= this.times.length+this.DRIVERS_ON_PAGE; i+=this.DRIVERS_ON_PAGE){
        items.push(i);
-       i=i+3;
     }
     return items;
   }
 
-  createRange(number){
+  driverOnPage(){
     var items: number[] = [];
-    for(var i = 1; i <= number; i++){
-
+    for(var i = 1; i <= this.DRIVERS_ON_PAGE; i++){
        items.push(i);
     }
     return items;
