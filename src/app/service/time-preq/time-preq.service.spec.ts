@@ -8,8 +8,4 @@ describe('TimePreqService', () => {
       providers: [TimePreqService]
     });
   });
-
-  it('should be created', inject([TimePreqService], (service: TimePreqService) => {
-    expect(service).toBeTruthy();
-  }));
 });
