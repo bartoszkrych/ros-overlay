@@ -7,7 +7,7 @@ import { TimePreqService } from './service/time-preq/time-preq.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit {
 
   times: TimePreq[];
   DRIVERS_ON_PAGE: number;
@@ -21,7 +21,8 @@ export class AppComponent implements OnInit  {
   }
 
   reloadData() {
-    this.timePreqService.getAllTimesPreq().subscribe(data => {this.times = data;
+    this.timePreqService.getAllTimesPreq().subscribe(data => {
+      this.times = data;
     });
   }
 
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit  {
   driverOnPage() {
     const items: number[] = [];
     for (let i = 1; i <= this.DRIVERS_ON_PAGE; i++) {
-       items.push(i);
+      items.push(i);
     }
     return items;
   }
