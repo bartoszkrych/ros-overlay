@@ -2,7 +2,6 @@
   <div class="card-body">
       <div class="card-body table-responsive">
             <ngb-carousel [wrap] = false [showNavigationArrows] = false [showNavigationIndicators] = false>
-                    <!-- https://ng-bootstrap.github.io/#/components/carousel/api -->
                 <ng-template ngbSlide  *ngFor="let number of numbersToList()">
                     <div *ngFor="let number2 of driverOnPage(); let i = index ">
                         <div *ngIf="times[number+i]" class="card bg-light" >
