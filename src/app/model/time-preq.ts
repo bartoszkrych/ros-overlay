@@ -6,4 +6,6 @@ export class TimePreq {
     laps: number;
     country: string;
     car_icon: any;
+    car_name: string;
+    skin: any;
 }

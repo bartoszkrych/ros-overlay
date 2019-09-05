@@ -5,13 +5,17 @@
                 <ng-template ngbSlide *ngFor="let number of numbersToList()">
                     <div *ngFor="let number2 of driverOnPage(); let i = index ">
                         <div *ngIf="times[number+i]" class="card bg-light">
-                            <td>{{times[number+i].position}}</td>
-                            <td>{{times[number+i].name}}</td>
-                            <td>{{times[number+i].laptime}}</td>
-                            <td>{{times[number+i].diff}}</td>
-                            <td>{{times[number+i].laps}}</td>
-                            <td>{{times[number+i].country}}</td>
-                            <td><img src="{{times[number+i].car_icon}}" height="30" /></td>
+                            <ul class="text-center list-inline py-2">
+                                <li class="list-inline-item">{{times[number+i].position}}</li>
+                                <li class="list-inline-item">{{times[number+i].name}}</li>
+                                <li class="list-inline-item">{{times[number+i].laptime}}</li>
+                                <li class="list-inline-item">{{times[number+i].diff}}</li>
+                                <li class="list-inline-item">{{times[number+i].laps}}</li>
+                                <li class="list-inline-item">{{times[number+i].country}}</li>
+                                <li class="list-inline-item"><img src="{{times[number+i].car_icon}}" height="50" /></li>
+                                <li class="list-inline-item"><img src="{{times[number+i].skin}}" height="100" /></li>
+                                <li class="list-inline-item">{{times[number+i].car_name}}</li>
+                            </ul>
                         </div>
                     </div>
                 </ng-template>
